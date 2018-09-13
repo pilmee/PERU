@@ -10,7 +10,6 @@ script:
   - npm run test:ruc
   - npm run build:prod
   - npm run build:ruc:prod
-before_deploy:
   - cd dist/sunat/ruc
 deploy:
   provider: npm
