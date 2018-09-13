@@ -1,16 +1,16 @@
-#SUNAT
+# SUNAT (libreria)
 
 Esta es una libreria para recopiar validaciones, directivas, components, tipos, enums, etc relaciados a la SUNAT.
 
-##INSTALACION
+## Instalacion
 ```bash
 npm install @sunat/ruc --save
 ```
 
-##USO
+## Uso
 ```javascript
 import * from '@sunat/ruc';
 ```
 
-## Licence
+## Licencia
 MIT
