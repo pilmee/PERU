@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - 'stable'
+before_script:
+  - npm ci
+script:
+  - npm run lint
+  - npm run lint:ruc
+  - npm test
+  - npm test:ruc
+  - npm run build:prod
+  - npm run build:ruc:prod
