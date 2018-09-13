@@ -6,7 +6,7 @@ before_script:
 script:
   - npm run lint
   - npm run lint:ruc
-  - npm test
-  - npm test:ruc
+  - npm run test
+  - npm run test:ruc
   - npm run build:prod
   - npm run build:ruc:prod
