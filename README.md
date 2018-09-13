@@ -1,5 +1,7 @@
 # SUNAT (libreria)
 
+[![Build Status](https://travis-ci.org/pilmee/SUNAT.svg?branch=master)](https://travis-ci.org/pilmee/SUNAT) [![Dependencies Status](https://david-dm.org/pilmee/SUNAT.svg)](https://david-dm.org/pilmee/SUNAT.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Greenkeeper badge](https://badges.greenkeeper.io/pilmee/SUNAT.svg)](https://greenkeeper.io/)
+
 Esta es una libreria para recopiar validaciones, directivas, components, tipos, enums, etc relaciados a la SUNAT.
 
 ## Instalacion
