@@ -8,7 +8,7 @@
     "build": "ng build",
     "build:prod": "ng build --prod",
     "build:ruc:prod": "ng build --prod @sunat/ruc",
-    "test": "ng test --watch=false",
+    "test": "ng test sunat --watch=false",
     "test:ruc": "ng test --watch=false @sunat/ruc",
     "lint": "ng lint",
     "lint:ruc": "ng lint @sunat/ruc",
