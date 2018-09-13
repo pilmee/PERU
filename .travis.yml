@@ -10,9 +10,14 @@ script:
   - npm run test:ruc
   - npm run build:prod
   - npm run build:ruc:prod
-after_sucess:
+before_deploy:
   - cd dist/sunat/ruc
 deploy:
   provider: npm
   email: $EMAIL
   api_key: $AUTH_TOKEN
+  skip_cleanup: true
+  on:
+    branch: master
+    tags: true
+    repo: @sunat/ruc
