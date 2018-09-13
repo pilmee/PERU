@@ -121,6 +121,44 @@
           }
         }
       }
+    },
+    "@sunat/ruc": {
+      "root": "projects/sunat/ruc",
+      "sourceRoot": "projects/sunat/ruc/src",
+      "projectType": "library",
+      "prefix": "ruc",
+      "targets": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/sunat/ruc/tsconfig.lib.json",
+            "project": "projects/sunat/ruc/ng-package.json"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sunat/ruc/src/test.ts",
+            "tsConfig": "projects/sunat/ruc/tsconfig.spec.json",
+            "karmaConfig": "projects/sunat/ruc/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sunat/ruc/tsconfig.lib.json",
+              "projects/sunat/ruc/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "sunat"
