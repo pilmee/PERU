@@ -1,4 +1,4 @@
-#SUNAT
+# SUNAT (libreria)
 
 Esta es una libreria para recopiar validaciones, directivas, components, tipos, enums, etc relaciados a la SUNAT.
 
