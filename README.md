@@ -4,15 +4,23 @@
 
 Esta es una libreria para recopiar validaciones, directivas, components, tipos, enums, etc relaciados a la SUNAT.
 
-## Instalacion
+## Instalacion:
 ```bash
 npm install @sunat/ruc --save
 ```
 
-## Uso
+## Como usar:
 ```javascript
 import * from '@sunat/ruc';
 ```
 
-## Licencia
+## Colaboradores:
+
+[//]: contributor-faces
+
+<a href="https://github.com/sapomemey"><img src="https://avatars2.githubusercontent.com/u/26681105?s=460&amp;v=4" title="sapomemey" width="80" height="80"></a>
+
+[//]: contributor-faces
+
+## Licencia:
 MIT
