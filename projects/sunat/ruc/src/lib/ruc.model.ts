@@ -1,9 +1,14 @@
 import { Person } from './person.model';
 import { RUC_LENGTH } from './ruc.constant';
+import { IRUC } from './ruc.interface';
 
 export class RUC {
-  private _ruc: string;
+  private _ruc: IRUC;
   public get value(): string {
+    return `${this._ruc.person}${this._ruc.id}${this._ruc.verificator}`;
+  }
+  public get observableValue(): any {
+    //TODO: Implementar retorno de subscripcion ".asObserver()" y actualizar propiedad value con return "this._ruc.getValue();"
     return this._ruc;
   }
 
@@ -28,13 +33,12 @@ export class RUC {
   }
 
   constructor(data: string | number) {
-    if (RUC.validate(data)) {
-      this._ruc = String(data);
+    try {
+      this._ruc = RUC.parse(data);
       this._error = null;
-      this._person = new Person(this._ruc);
-    } else {
-      this._ruc = null;
-      this._error = new Error('RUC incorrecto.');
+      this._person = new Person(this._ruc.person);
+    } catch (error) {
+      this._error = error;
     }
   }
 
@@ -51,5 +55,25 @@ export class RUC {
         suma += (_ruc_ % 10) * (i % 7 + (i / 7 || 0) + 1);
     }
     return suma % 11 === 0;
+  }
+  
+  public static parse(ruc: string | number): IRUC {
+    try {
+      const _ruc_ = String(ruc);
+      
+      if (RUC.validate(ruc)) {
+        const person = _ruc_.substr(0, 2);
+        const id = _ruc_.substr(2, 8);
+        const verificator = _ruc_.substr(10, 10);
+
+        return {
+          person, id, verificator
+        };
+      }
+      
+      throw new Error('RUC incorrecto');
+    } catch (error) {
+      //TODO:
+    }    
   }
 }
