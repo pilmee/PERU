@@ -159,6 +159,76 @@
           }
         }
       }
+    },
+    "@reniec/dni": {
+      "root": "projects/reniec/dni",
+      "sourceRoot": "projects/reniec/dni/src",
+      "projectType": "library",
+      "prefix": "dni",
+      "targets": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/reniec/dni/tsconfig.lib.json",
+            "project": "projects/reniec/dni/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/reniec/dni/src/test.ts",
+            "tsConfig": "projects/reniec/dni/tsconfig.spec.json",
+            "karmaConfig": "projects/reniec/dni/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/reniec/dni/tsconfig.lib.json",
+              "projects/reniec/dni/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "@reniec/passport": {
+      "root": "projects/reniec/passport",
+      "sourceRoot": "projects/reniec/passport/src",
+      "projectType": "library",
+      "prefix": "passport",
+      "targets": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/reniec/passport/tsconfig.lib.json",
+            "project": "projects/reniec/passport/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/reniec/passport/src/test.ts",
+            "tsConfig": "projects/reniec/passport/tsconfig.spec.json",
+            "karmaConfig": "projects/reniec/passport/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/reniec/passport/tsconfig.lib.json",
+              "projects/reniec/passport/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "sunat"

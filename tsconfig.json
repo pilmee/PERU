@@ -23,6 +23,18 @@
       ],
       "@sunat/ruc/*": [
         "dist/sunat/ruc/*"
+      ],
+      "@reniec/dni": [
+        "dist/reniec/dni"
+      ],
+      "@reniec/dni/*": [
+        "dist/reniec/dni/*"
+      ],
+      "@reniec/passport": [
+        "dist/reniec/passport"
+      ],
+      "@reniec/passport/*": [
+        "dist/reniec/passport/*"
       ]
     }
   }
