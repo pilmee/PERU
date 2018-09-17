@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Ruc } from '@sunat/ruc';
+import { RUC } from '@sunat/ruc';
 
 @Component({
   selector: 'sunat-root',
@@ -9,12 +9,11 @@ import { Ruc } from '@sunat/ruc';
 })
 export class AppComponent {
 
-  rucValid = '';
-  numberRuc = '';
+  public valid = '';
+  public ruc = '';
 
-  isQuantityValid(): void {
-    const ruc = new Ruc(this.numberRuc);
-    this.rucValid = ruc.isQuantityValid() ? 'Ruc con 11 digitos' : 'Debe tener 11 digitos';
+  public validate(): void {
+    const ruc = new RUC(this.ruc);
+    this.valid = ruc.quantityValid ? 'Ruc con 11 digitos' : 'Debe tener 11 digitos';
   }
-
 }

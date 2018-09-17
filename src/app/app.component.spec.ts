@@ -17,10 +17,10 @@ describe('AppComponent', () => {
 
   // TODO: el test arroja error.
   it('Debe retornar "Debe tener 11 digitos"', () => {
-    component.numberRuc = '123';
-    const result = component.isQuantityValid();
+    component.ruc = '123';
+    component.validate();
 
-    expect(result).toContain('Debe tener 11 digitos');
+    expect(component.valid).toContain('Debe tener 11 digitos');
   });
 
 });

@@ -1,6 +1,6 @@
+import { IRUC } from './ruc.interface';
 import { Person } from './person.model';
 import { RUC_LENGTH } from './ruc.constant';
-import { IRUC } from './ruc.interface';
 
 export class RUC {
   private _ruc: IRUC;
@@ -8,7 +8,7 @@ export class RUC {
     return `${this._ruc.person}${this._ruc.id}${this._ruc.verificator}`;
   }
   public get observableValue(): any {
-    //TODO: Implementar retorno de subscripcion ".asObserver()" y actualizar propiedad value con return "this._ruc.getValue();"
+    // TODO: Implementar retorno de subscripcion ".asObserver()" y actualizar propiedad value con return "this._ruc.getValue();"
     return this._ruc;
   }
 
@@ -52,15 +52,16 @@ export class RUC {
     }
 
     for (suma = -(_ruc_ % 10 < 2), i = 0; i < RUC_LENGTH; i++, _ruc_ = _ruc_ / 10 || 0) {
-        suma += (_ruc_ % 10) * (i % 7 + (i / 7 || 0) + 1);
+      suma += (_ruc_ % 10) * (i % 7 + (i / 7 || 0) + 1);
     }
+
     return suma % 11 === 0;
   }
-  
+
   public static parse(ruc: string | number): IRUC {
     try {
       const _ruc_ = String(ruc);
-      
+
       if (RUC.validate(ruc)) {
         const person = _ruc_.substr(0, 2);
         const id = _ruc_.substr(2, 8);
@@ -70,10 +71,10 @@ export class RUC {
           person, id, verificator
         };
       }
-      
+
       throw new Error('RUC incorrecto');
     } catch (error) {
-      //TODO:
-    }    
+      // TODO:
+    }
   }
 }

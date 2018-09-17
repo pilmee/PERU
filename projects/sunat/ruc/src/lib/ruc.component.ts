@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ruc-ruc',
@@ -9,11 +9,6 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: []
 })
-export class RucComponent implements OnInit {
-
+export class RucComponent {
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

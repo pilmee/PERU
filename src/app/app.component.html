@@ -1,10 +1,10 @@
 <div class="container">
-    <div class="alert alert-info">{{rucValid}}</div>
+    <div class="alert alert-info">{{valid}}</div>
     <form>
         <div class="form-group">
             <label for="numberRuc">Número de ruc:</label>
-            <input type="text" class="form-control error" id="numberRuc" placeholder="ruc" name="numberRuc" [(ngModel)]="numberRuc">
+            <input type="text" class="form-control error" id="ruc" placeholder="ruc" name="ruc">
         </div>
-        <button (click)="isQuantityValid()" type="submit" class="btn btn-info">valida</button>
+        <button (click)="validate()" type="submit" class="btn btn-info">valida</button>
     </form>
 </div>
