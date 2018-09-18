@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
-import { RUC } from '@sunat/ruc';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { containsElevenDigits } from './validators/containsEleventDigits';
 
 @Component({
   selector: 'sunat-root',
@@ -11,9 +11,17 @@ export class AppComponent {
 
   public valid = '';
   public ruc = '';
+  public rucForm = new FormGroup({
+    rucControl: new FormControl(
+      { value: '', disabled: false },
+      {
+        validators: [Validators.required, containsElevenDigits],
+        updateOn: 'blur'
+      })
+  }, { updateOn: 'submit' });
 
-  public validate(): void {
-    const ruc = new RUC(this.ruc);
-    this.valid = ruc.quantityValid ? 'Ruc con 11 digitos' : 'Debe tener 11 digitos';
+  public sendForm(): void {
+    console.log(this.rucForm);
   }
+
 }

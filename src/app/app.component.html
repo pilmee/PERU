@@ -1,10 +1,11 @@
 <div class="container">
     <div class="alert alert-info">{{valid}}</div>
-    <form>
+    <form [formGroup]="rucForm">
         <div class="form-group">
             <label for="numberRuc">Número de ruc:</label>
-            <input type="text" class="form-control error" id="ruc" placeholder="ruc" name="ruc">
+            <input type="text" class="form-control error" id="numberRuc" placeholder="ruc" formControlName="rucControl">
+            {{rucForm.controls['rucControl'].valid}}
         </div>
-        <button (click)="validate()" type="submit" class="btn btn-info">valida</button>
+        <button (click)="sendForm()" type="submit" class="btn btn-info">valida</button>
     </form>
 </div>
