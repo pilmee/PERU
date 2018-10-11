@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run build:ruc:prod && ng serve",
+    "start:person": "ng serve --project person-manager",
     "build": "ng build",
     "build:prod": "ng build --prod",
     "build:ruc:prod": "ng build --prod @sunat/ruc",

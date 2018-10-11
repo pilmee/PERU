@@ -160,6 +160,126 @@
           }
         }
       }
+    },
+    "person-manager": {
+      "root": "projects/person-manager/",
+      "sourceRoot": "projects/person-manager/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/person-manager",
+            "index": "projects/person-manager/src/index.html",
+            "main": "projects/person-manager/src/main.ts",
+            "polyfills": "projects/person-manager/src/polyfills.ts",
+            "tsConfig": "projects/person-manager/tsconfig.app.json",
+            "assets": [
+              "projects/person-manager/src/favicon.ico",
+              "projects/person-manager/src/assets"
+            ],
+            "styles": [
+              "projects/person-manager/src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/person-manager/src/environments/environment.ts",
+                  "with": "projects/person-manager/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "person-manager:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "person-manager:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "person-manager:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/person-manager/src/test.ts",
+            "polyfills": "projects/person-manager/src/polyfills.ts",
+            "tsConfig": "projects/person-manager/tsconfig.spec.json",
+            "karmaConfig": "projects/person-manager/karma.conf.js",
+            "styles": [
+              "projects/person-manager/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/person-manager/src/favicon.ico",
+              "projects/person-manager/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/person-manager/tsconfig.app.json",
+              "projects/person-manager/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "person-manager-e2e": {
+      "root": "projects/person-manager-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/person-manager-e2e/protractor.conf.js",
+            "devServerTarget": "person-manager:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "person-manager:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/person-manager-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "sunat"
